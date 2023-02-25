@@ -8,7 +8,7 @@ Docker image over [here](https://hub.docker.com/_/redis)
 
 ```
 docker network create redis
-docker run -it --rm --name redis --net redis -p 6379:6379 redis:6.0-alpine
+docker run -it --rm --name redis --net redis -p 6379:6379 redis:7.0-alpine
 ```
 
 ## Configuration
@@ -19,7 +19,7 @@ Starting Redis with a custom config
 
 ```
 cd .\storage\redis\
-docker run -it --rm --name redis --net redis -v ${PWD}/config:/etc/redis/ redis:6.0-alpine redis-server /etc/redis/redis.conf
+docker run -it --rm --name redis --net redis -v ${PWD}/config:/etc/redis/ redis:7.0-alpine redis-server /etc/redis/redis.conf
 
 ```
 
@@ -40,7 +40,7 @@ Redis Persistence Documentation [here](https://redis.io/topics/persistence)
 ```
 docker volume create redis
 cd .\storage\redis\
-docker run -it --rm --name redis --net redis -v ${PWD}/config:/etc/redis/ -v redis:/data/  redis:6.0-alpine redis-server /etc/redis/redis.conf
+docker run -it --rm --name redis --net redis -v ${PWD}/config:/etc/redis/ -v redis:/data/  redis:7.0-alpine redis-server /etc/redis/redis.conf
 
 ```
 
